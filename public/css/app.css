@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;500&family=Rubik&display=swap');
+*,*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+#wave1{
+    transform: rotate(140deg);
+    position: absolute;
+    left: -50%;
+    top: 0;
+    fill: #0081a7;
+    z-index: -1;
+}
+#wave2{
+    transform: rotate(-10deg);
+    position: absolute;
+    right: -100%;
+    bottom: 0;
+    fill: #0081a7;
+    z-index: -1;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.card{
+    width: calc(300px + 5%);
+}
+.card i{
+    margin-left: 50%;
+    margin-bottom: 1em;
+    transform: translateX(-50%);
+    color: #00afb9;
+}
+.card .switch{
+    display: grid;
+    grid-template-columns: 1f 1fr;
+}
+.card .switch span{
+    grid-row: 1/1;
+    text-align: center;
+    padding: 1em;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.card .switch span:first-child{
+    grid-column: 1/2;
+
+}
+.card .switch span:first-child{
+    grid-column: 2/3;
+    background-color: #00afb9;
+}
+
+.card form{
+    display: flex;
+    flex-direction: column;
+    transition: all 10s ease-in-out;
+}
+
+.card form input{
+    margin: 0.5em 0;
+    padding: 1em 2em;
+    font-size: 18px;
+    color: #404040;
+    border: solid 1px gray;
+}
+
+.card form input:focus{
+    border: solid 1px #00afb9;
+    box-shadow: 0 0 5px #00afb9;
+    outline: 0 none;
+}
+.card form button{
+    font-size: 18px;
+    margin-top: 2em;
+    padding: 1em 2em;
+    border: none;
+    color: white;
+    background-color: #00afb9;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.card form button:hover{
+    background-color: #0081a7;
+}
+
+.card form div{
+    padding: 1em 0;
+    font-size: 20px;
+    color: #495057;
+}
+.card form div input{
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+.card>span a{
+    text-decoration: none;
+    color: black;
+}
+
+.topBar{
+    width: 100%;
+    box-shadow: 1px 1px 10px gray;
+    background-color: #0077b6;
+}
+.notification{
+    font-family: 'Rubik', sans-serif;
+    /* float: right; */
+    max-width: fit-content;
+    margin-left: auto;
+    position: relative;
+}
+.notification i{
+    color: white;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.notification i:first-child{
+    display: none;
+}
+.notification .box{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background-color: white;
+    box-shadow: 0 0 10px gray;
+    right: 0.5em;
+    display: none;
+    background-color: white;
+    z-index: 1;
+}
+.notification .heading{
+    font-weight: bolder;
+    padding: 1em;
+    font-size: 18px;
+    background-color: #EFF0F4;
+}
+.notification .heading span{
+    float: right;
+}
+.notification .box .notes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sideBar{
+    background-color: #001d3d;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+.user{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 10em;
+}
+.user > .userName{
+    font-weight: bolder;
+    padding: 0.5em;
+}
+.user > .role{
+    font-weight: lighter;
+}
+.sideBar .userIcon{
+    color: black;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBar .nav{
+    width: 100%;
+    color: white;
+    margin-top: 5em;
+}
+.sideBar .nav .navItem{
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+.sideBar .nav .navItem:hover{
+    color: #00b4d8;
+}
+.sideBar .nav .navItem i:last-child{
+    float: right;
+}
+.main{
+    padding: 1em;
+    width: 100%;
+    display: flex;
+}
+.main .users{
+    padding: 1em;
+    width: 80%;
+}
+.main .users>span{
+    font-size: 20px;
+    margin-left: 1em;
+    font-weight: bolder;
+    color: #001d3d;
+}
+.main .table{
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+.main .table .head{
+    font-weight: bold;
+    box-shadow: none !important;
+}
+.main .table .row{
+    display: flex;
+    box-shadow: 0 0 10px #adb5bd;
+    margin: 0.5em;
+}
+.main .table .col{
+    color: #495057;
+    width: 20%;
+    padding: 1em;
+    margin: 0.5em;
+}
+.main .table .col i{
+    color: #00b4d8;
+    cursor: pointer;
+}
+.main .table .col:last-child{
+    width: 10%;
+    position: relative;
+}
+.main .table .col:last-child .menu-box{
+    position: absolute;
+    padding: 0.5em 2em;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    display: none;
+}
+.main .table .col:last-child .menu-box a{
+    text-decoration: none;
+    color: #495057;
+    transition: color 0.3s ease-in-out;
+}
+.main .table .col:last-child .menu-box a:hover{
+    color: #0077b6;
+}
+.main .card{
+    margin-top: 200px;
+    margin-left: 50%;
+    transform: translateX(-100%);
+}
+
+@media (max-width: 1080px) {
+    .main .table .head{
+        display: none;
+    }
+    .main .table{
+        width: 90%;
+    }
+    .main .table .row{
+        flex-direction: column;
+    }
+}
+@media (max-width:800px) {
+    .notification i:first-child{
+        display: inline-block;
+    }
+    .main{
+        margin-left: 0 !important;
+    }
+    .main .users{
+        width: 100%;
+    }
+    .main .users .table{
+        width: 100%;
+    }
+    .main .card{
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .card{
+        width: calc(300px+5%);
+    }
+    .sideBar{
+        left: -100%
+    }
+}
+
+@media (max-width:600px) {
+    #wave1{
+        left: -100%;
+        width: 200%;
+    }
+    .card{
+        width: 60%;
+    }
+}
+
+@media (max-width:480px) {
+    .card{
+        width: 88%;
+    }
+}
